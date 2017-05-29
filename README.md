@@ -1,4 +1,4 @@
-# Avro webpack loaders [![NPM version](https://img.shields.io/npm/v/@avro/webpack-loader.svg)](https://www.npmjs.com/package/@avro/webpack-loader)
+# Avro webpack loader [![NPM version](https://img.shields.io/npm/v/@avro/webpack-loader.svg)](https://www.npmjs.com/package/@avro/webpack-loader)
 
 ## Usage
 
