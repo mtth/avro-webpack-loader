@@ -1,0 +1,4 @@
+protocol LogService {
+
+  void log(string message);
+}

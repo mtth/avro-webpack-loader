@@ -1,0 +1,17 @@
+{
+  "name": "@avro/webpack-loader",
+  "version": "0.1.0",
+  "main": "index.js",
+  "peerDependencies": {
+    "avsc": "^5.*.*"
+  }
+  "author": {
+    "name": "Matthieu Monsch",
+    "email": "monsch@alum.mit.edu"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mtth/avro-webpack-loader.git"
+  }
+}
