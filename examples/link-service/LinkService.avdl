@@ -1,9 +1,16 @@
 /** A simple service to shorten URLs. */
 protocol LinkService {
 
+  /** A record with information about each alias. */
+  record Alias {
+    date creationTime;
+    string name;
+    string url;
+  }
+
   /** Map a URL to an alias, throwing an error if it already exists. */
-  null createAlias(string alias, string url);
+  Alias createAlias(string name, string url);
 
   /** Expand an alias, returning null if the alias doesn't exist. */
-  union { null, string } expandAlias(string alias);
+  union { null, Alias } getAlias(string name);
 }
