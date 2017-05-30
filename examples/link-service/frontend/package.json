@@ -1,0 +1,9 @@
+{
+  "name": "frontend",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "avsc": "^5.0.3",
+    "websocket-stream": "^5.0.0"
+  }
+}

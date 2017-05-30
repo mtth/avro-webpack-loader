@@ -38,6 +38,6 @@ module.exports = function () {
       done(err);
       return;
     }
-    done(null, `module.exports = JSON.parse(${JSON.stringify(protocol)});`);
+    done(null, `module.exports = ${JSON.stringify(protocol)};`);
   });
 };

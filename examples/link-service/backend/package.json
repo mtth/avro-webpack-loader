@@ -1,0 +1,9 @@
+{
+  "name": "backend",
+  "private": true,
+  "main": "server.js",
+  "dependencies": {
+    "avsc": "^5.0.3",
+    "verdon": "^0.3.3"
+  }
+}
