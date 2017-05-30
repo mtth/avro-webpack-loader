@@ -9,7 +9,12 @@ module.exports = {
     rules: [
       {
         test: /\.avdl$/,
-        use: '../../'
+        use: {
+          loader: '../../',
+          options: {
+            typeRefs: {date: {type: 'long', logicalType: 'timestamp-ms'}}
+          }
+        }
       }
     ]
   },

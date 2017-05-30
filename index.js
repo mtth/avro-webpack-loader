@@ -4,19 +4,17 @@
 
 const avro = require('avsc');
 const fs = require('fs');
+const loaderUtils = require('loader-utils');
 const path = require('path');
 
-// TODO: Import hook.
-// TODO: Options.
 
 /** Registering loading function for assembling IDLs. */
 function createImportHook(loader) {
-  var imports = {};
+  const imports = {};
   return function (fpath, kind, cb) {
     fpath = path.resolve(fpath);
     loader.addDependency(fpath);
     if (imports[fpath]) {
-      // Already imported, return nothing to avoid duplicating attributes.
       process.nextTick(cb);
       return;
     }
@@ -27,8 +25,14 @@ function createImportHook(loader) {
 
 
 module.exports = function () {
+  const loaderOpts = loaderUtils.getOptions(this) || {};
   const done = this.async();
-  const opts = {importHook: createImportHook(this)};
+  const opts = {
+    ackVoidMessages: !!loaderOpts.ackVoidMessages,
+    delimitedCollections: !!loaderOpts.delimitedCollections,
+    typeRefs: loaderOpts.typeRefs,
+    importHook: createImportHook(this)
+  };
   avro.assembleProtocol(this.resourcePath, opts, function (err, protocol) {
     if (err) {
       done(err);

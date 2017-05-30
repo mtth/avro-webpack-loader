@@ -1,4 +1,4 @@
 protocol LogService {
 
-  void log(string message);
+  void log(date time, string message);
 }
